@@ -15,37 +15,37 @@ namespace Lingo
     {
         int guesses = 0;
         List<string> sLingoAnswer = new List<string>();
-        List<string> sLingoArr = new List<string>();
+        List<string> sLingoList = new List<string>();
         
         public Form1()
         {
             InitializeComponent();
             openInput();
-            sLingoArr.Add("vissen");
-            sLingoArr.Add("banaan");
-            sLingoArr.Add("afhaal");
-            sLingoArr.Add("banken");
-            sLingoArr.Add("bedrog");
-            sLingoArr.Add("bewust");
-            sLingoArr.Add("braken");
-            sLingoArr.Add("chalet");
-            sLingoArr.Add("achten");
-            sLingoArr.Add("altijd");
-            sLingoArr.Add("zekers");
-            sLingoArr.Add("cursus");
-            sLingoArr.Add("cellen");
-            sLingoArr.Add("cabine");
-            sLingoArr.Add("regios");
-            sLingoArr.Add("ruilen");
+            sLingoList.Add("vissen");
+            sLingoList.Add("banaan");
+            sLingoList.Add("afhaal");
+            sLingoList.Add("banken");
+            sLingoList.Add("bedrog");
+            sLingoList.Add("bewust");
+            sLingoList.Add("braken");
+            sLingoList.Add("chalet");
+            sLingoList.Add("achten");
+            sLingoList.Add("altijd");
+            sLingoList.Add("zekers");
+            sLingoList.Add("cursus");
+            sLingoList.Add("cellen");
+            sLingoList.Add("cabine");
+            sLingoList.Add("regios");
+            sLingoList.Add("ruilen");
         }
         
         private void openInput()
         {
             this.sLingoAnswer.Clear();
-            Form2 Lingoinput = new Form2();
-            Lingoinput.ShowDialog();
-            string sAnswerinput = Lingoinput.textBox1.Text;
-            foreach (char sChar in sAnswerinput)
+            Form2 LingoInput = new Form2();
+            LingoInput.ShowDialog();
+            string sAnswerInput = LingoInput.textBox1.Text;
+            foreach (char sChar in sAnswerInput)
             {
                 sLingoAnswer.Add("" + sChar);
             }
@@ -53,14 +53,14 @@ namespace Lingo
 
         private void genLingo()
         {
-            Random r = new Random();
-            int rand = r.Next(0, sLingoArr.Count);
-            string sAnswerinput = sLingoArr[rand];
-            foreach (char sChar in sAnswerinput)
+            Random _R = new Random();
+            int rand = _R.Next(0, sLingoList.Count);
+            string sAnswerInput = sLingoList[rand];
+            foreach (char sChar in sAnswerInput)
             {
                 sLingoAnswer.Add("" + sChar);
             }
-            System.Console.WriteLine(sAnswerinput);
+            System.Console.WriteLine(sAnswerInput);
         }
 
         private void menuItem1_Click(object sender, EventArgs e) { openInput(); }
@@ -71,7 +71,7 @@ namespace Lingo
 
         private void button1_Click(object sender, EventArgs e)
         {               
-            List<string> sUserinput = new List<string>();
+            List<string> sUserInput = new List<string>();
             TextBox[] LTinput = new TextBox[] { textBox1, textBox2, textBox3, textBox4, textBox5, textBox6 };
             TextBox[] LToutput = new TextBox[] { textBox7, textBox8, textBox9, textBox10, textBox11, textBox12 };
 
@@ -84,7 +84,7 @@ namespace Lingo
                 }
                 else
                 {
-                    sUserinput.Add(item.Text);
+                    sUserInput.Add(item.Text);
                     item.BackColor = Color.White;
                     item.Clear();
                 }
@@ -94,7 +94,7 @@ namespace Lingo
             int iu = 0;
             foreach (TextBox item in LToutput)
             {
-                item.Text = sUserinput[iu];
+                item.Text = sUserInput[iu];
                 iu++;  
             }
 
@@ -103,11 +103,11 @@ namespace Lingo
             {
                 try
                 {
-                    if (sUserinput[ia] == sLingoAnswer[ia])
+                    if (sUserInput[ia] == sLingoAnswer[ia])
                     {
                         item.BackColor = Color.Green;
                     }
-                    else if (sLingoAnswer.Contains(sUserinput[ia]))
+                    else if (sLingoAnswer.Contains(sUserInput[ia]))
                     {
                         item.BackColor = Color.Red;           
                     }
