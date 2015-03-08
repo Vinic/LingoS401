@@ -44,9 +44,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.woordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gegenereerdWoordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
-            this.gegenereerdWoordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,7 +131,7 @@
             this.textBox1.Size = new System.Drawing.Size(17, 26);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown_First);
             // 
             // textBox2
             // 
@@ -186,6 +186,7 @@
             this.textBox6.Size = new System.Drawing.Size(17, 26);
             this.textBox6.TabIndex = 5;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_KeyDown_Last);
             // 
             // button1
             // 
@@ -223,9 +224,16 @@
             // woordToolStripMenuItem
             // 
             this.woordToolStripMenuItem.Name = "woordToolStripMenuItem";
-            this.woordToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.woordToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.woordToolStripMenuItem.Text = "Woord";
             this.woordToolStripMenuItem.Click += new System.EventHandler(this.menuItem1_Click);
+            // 
+            // gegenereerdWoordToolStripMenuItem
+            // 
+            this.gegenereerdWoordToolStripMenuItem.Name = "gegenereerdWoordToolStripMenuItem";
+            this.gegenereerdWoordToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.gegenereerdWoordToolStripMenuItem.Text = "Gegenereerd woord";
+            this.gegenereerdWoordToolStripMenuItem.Click += new System.EventHandler(this.menuItem2_Click);
             // 
             // label1
             // 
@@ -252,18 +260,11 @@
             this.textBox13.TabIndex = 16;
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // gegenereerdWoordToolStripMenuItem
-            // 
-            this.gegenereerdWoordToolStripMenuItem.Name = "gegenereerdWoordToolStripMenuItem";
-            this.gegenereerdWoordToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.gegenereerdWoordToolStripMenuItem.Text = "Gegenereerd woord";
-            this.gegenereerdWoordToolStripMenuItem.Click += new System.EventHandler(this.menuItem2_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(285, 152);
+            this.ClientSize = new System.Drawing.Size(285, 151);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
