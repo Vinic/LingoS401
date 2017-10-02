@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lingo
@@ -20,7 +13,7 @@ namespace Lingo
 
         private void Validate(TextBox textBoxControl)
         {
-            Regex rx = new Regex("[^A-Z|^a-z|^ |^\t]");
+            var rx = new Regex("[^A-Z|^a-z|^ |^\t]");
             if (rx.IsMatch(textBoxControl.Text))
                 throw new Exception("Alleen letters zijn toegestaan");
         }
@@ -30,13 +23,12 @@ namespace Lingo
             try
             {
                 Validate(textBox1);
-                this.Close();
+                Close();
             }
             catch (Exception ez)
             {
                 MessageBox.Show(ez.Message);
             }
-            
         }
     }
 }
